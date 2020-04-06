@@ -15,7 +15,6 @@ class DocsJob(Job):
         return url
 
 
-
 def docs_job_to_json(docs_job):
     result_dict = {}
     result_dict['job_type'] = 'document'

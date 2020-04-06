@@ -1,7 +1,7 @@
 import json
 import requests
 from c20_server.job import Job
-
+from c20_client import reggov_api_doc_error
 
 
 class DocsJob(Job):
@@ -35,13 +35,8 @@ def return_list_docs(page_offset, start_date):
 
     return doc_ids
 
-def get_job(server_url):
+def get_job(server_url, client_id):
 
-    url = server_url + '/get_job'
+    url = server_url + '/get_job?client_id=' + client_id
     result = requests.get(url)
     return result
-
-
-
-
-

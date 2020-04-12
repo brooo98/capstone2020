@@ -12,9 +12,25 @@ class DocsJob(Job):
 
     def get_url(self):
         url = f'https://api.data.gov:443/regulations/v3/document.json?po={self.page_offset}&crd={self.start_date}'
-        return url
+        return url   
+    
+    def get_po(self):
+        return page_offset
+    
+    def get_sd(self):
+        return start_date
 
 
+def countNumDocs(docs_job):
+    url = docs_job.get_url()
+    try:
+        counter = requests.get(url + '/count');
+    except Exception:
+        print('error occured')
+    
+    max_pages = counter // 1000
+    
+    
 def docs_job_to_json(docs_job):
     result_dict = {}
     result_dict['job_type'] = 'document'

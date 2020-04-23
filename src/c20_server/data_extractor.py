@@ -26,7 +26,7 @@ class DataExtractor:
 
     @staticmethod
     def save_files_disk(Data_list):
-
+        
         for data in Data_list:
             
             directory = data.folder_name
@@ -34,6 +34,7 @@ class DataExtractor:
                 os.makedirs(directory)
             
             detination = data.folder_name + '/' +data.file_name
+            
             with open(detination,'w') as f:
                 f.write(data.contents)
 

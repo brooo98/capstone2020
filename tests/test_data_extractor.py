@@ -60,5 +60,5 @@ def test_save_files_disk(extractor):
     rez = DataExtractor.extract(list_of_data_dicts)
     extractor.save_files_disk(rez)
     
-    assert os.path.exists('the/directory/')       
+    assert os.path.exists('the/directory')       
  

@@ -53,11 +53,12 @@ def test_missing_field_gives_exception(extractor):
         extractor.extract(missing_data)
         
         
-
 def test_save_files_disk(extractor):
     
     list_of_data_dicts = [{'folder_name': 'the/directory/', 'file_name': 'aa.txt', 'data': 'new data'}]
+    
     rez = DataExtractor.extract(list_of_data_dicts)
     extractor.save_files_disk(rez)
     
-    assert os.path.exists('the/directory/')
+    assert os.path.exists('the/directory/')       
+ 
